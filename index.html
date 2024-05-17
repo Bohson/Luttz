@@ -12,6 +12,25 @@
             margin: 0;
             padding: 0;
         }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .logo {
+            width: 100px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -55,6 +74,15 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <img src="ruta-del-logo" alt="Logo de Luttz" class="logo">
+        <div class="nav-links">
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#productos" class="nav-link">Productos</a>
+            <a href="#playground" class="nav-link">Playground</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </div>
+    </div>
     <div class="container">
         <h1>Juguete para el Desarrollo Motriz de Niños</h1>
         <p><strong>Descripción:</strong> Nuestro innovador juguete de madera está diseñado específicamente para estimular el desarrollo motriz en niños. Con colores vibrantes y formas únicas, este juguete proporciona una experiencia de aprendizaje divertida y educativa.</p>
