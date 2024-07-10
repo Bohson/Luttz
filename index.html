@@ -14,8 +14,7 @@
             color: black;
             font-family: "Montserrat", sans-serif;
             margin: 0;
-            padding: 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)        
+            padding: 0;            
         }
         .navbar {
             display: flex;
@@ -23,10 +22,9 @@
             align-items: center;
             background-color: white;
             padding: 10px 20px;
-            padding-left: 10dvh;
-            padding-right: 10dvh;
-            border-bottom: 6px solid #ff9900;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding-left: 10dvw;
+            padding-right: 10dvw;
+            border-bottom: 6px solid #ff9900;            
         }
         .logo {
             width: 120px;
@@ -166,10 +164,20 @@
         .characteristics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 4dvw;
+            margin-left: 0;
+            padding-left: 0;
+            object-position: center;
         }
         .characteristics-grid li {
             text-align: center;
+            object-position: center;
+        }
+        .characteristics-grid ul {
+            text-align: center;
+            object-position: center;
+            margin-left: 0;
+            padding-left: 0;
         }
         .characteristics-grid .image-container {
             margin-bottom: 10px;
@@ -244,10 +252,11 @@
         }
 
         .image-container {
-            width: 300px; /* Set the desired width */
+            width: 100%; /* Set the desired width */
             height: 200px; /* Set the desired height */
             overflow: hidden;
             position: relative;
+            object-fit: center;
         }
 
         .image-container img {
@@ -260,14 +269,14 @@
         }
 
         .content-container {
-            width: 320px; /* Match the width of the image-container */
+            width: 100%;
+            object-fit: center; /* Match the width of the image-container */
             margin-top: 0px; /* Space between the image and the text */
-            position: block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: block;            
         }        
 
         .video-section {
-            width: 100%;
+            width: auto;
             height: 70dvh;
             position: relative;
             overflow: hidden;
@@ -281,6 +290,20 @@
             object-fit: cover;
             
         }
+
+        @media (max-width: 1000px) {
+            .video-section video {
+                height: 100%;
+                object-fit: cover; /* u otro ajuste que prefieras para pantallas pequeñas */
+            }   
+            .video-section {     
+                position: top;
+                height: 60dvh;
+                margin-top: 1dvh;                        
+                padding-bottom: 5dvh;
+            }
+        }
+
 
         * {
            transition: all 0.3s ease;
@@ -301,13 +324,12 @@
             align-items: center;
         }
 
-        .product-info-container ul {
-            flex: 2;
+        .product-info-container ul {                    
+            object-fit: 100%;
         }
 
         .product-info-container .button {
-            margin-top: 1dvh;
-            margin-left: 10dvw;
+            margin-top: 1dvh;            
         }
 
         .hidden {
@@ -337,8 +359,27 @@
         function stopBall() {
             document.getElementById('gifBall').src = 'static-ball.gif';
         }
+
+        
+
         document.addEventListener('DOMContentLoaded', function() {
             const videoSection = document.querySelector('.video-section video');
+            // Ajustar el object-fit y height del video según el ancho de la ventana
+            function adjustVideoSettings() {
+             if (window.innerWidth > 1000) {
+                videoSection.style.objectFit = 'cover';
+             videoSection.style.height = '100%'; // O el valor que prefieras
+            } else {
+                videoSection.style.objectFit = 'cover'; // O el ajuste que prefieras para pantallas pequeñas
+             videoSection.style.height = '100%';
+            }
+            }
+
+                // Llamar a la función al cargar la página y al redimensionar la ventana
+            adjustVideoSettings();
+            window.addEventListener('resize', adjustVideoSettings);
+
+            
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -355,7 +396,7 @@
             window.addEventListener('scroll', () => {
                 observer.observe(videoSection);
             });
-        });
+        });        
 
     </script>
 </head>
