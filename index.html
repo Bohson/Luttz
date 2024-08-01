@@ -86,10 +86,10 @@
             text-underline-offset: 10px;
         }
         h5 {
-            font-size: 18px;
-            margin: 2dvh;
+            font-size: 18px;            
             text-align: justify;
             font-weight: 500;
+            padding-left: 0dvh;
             font-family: "Montserrat", sans-serif;
         }
         h6 {
@@ -112,9 +112,9 @@
         }
 
         .heading-8 {
-            font-size: 22px;
+            font-size: 18px;
             padding-top: 20px;
-            font-weight: 400;            
+            font-weight: 500;            
             text-align: justify;
             font-family: "Montserrat", sans-serif;
         }
@@ -122,16 +122,19 @@
         ul {
             margin-bottom: 20px;
             font-family: "Montserrat", sans-serif;
+            padding-left: 2dvw;
         }
         .button {
-            display: inline-block;
+            display: inline-flex;            
             padding: 2dvh 4dvw;
+            margin-left: 25dvw;
             background-color: #ff9900;
             color: black;
             text-decoration: none;
             border-radius: 15px;
-            margin-top: 20px;            
-            font-size: 2.5dvw;
+            margin-top: 10px;            
+            margin-bottom: 10px;            
+            font-size: 3dvw;
             justify-content: center;
             font-weight: 500;
             font-family: "Montserrat", sans-serif;
@@ -310,7 +313,7 @@
         }
 
         li{
-            font-size: 2dvw;            
+            font-size: 20;            
             line-height: 1.5;
             padding-left: 0dvh;
             text-align: justify;                    
@@ -319,22 +322,24 @@
         }        
 
         .product-info-container {
-            display: flex;
-            justify-content: space-between;
+            display: flex;            
             align-items: center;
         }
 
         .product-info-container ul {                    
             object-fit: 100%;
-        }
-
-        .product-info-container .button {
-            margin-top: 1dvh;            
-        }
+        }        
 
         .hidden {
             display: none;
         }
+
+        .responsive-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+}
     </style>
     <script>
         function startRect() {
@@ -522,8 +527,9 @@ window.addEventListener('resize', () => {
                 <li>Item Weight: 2.05 pounds</li>
                 <li>Recommended Age: 12 months - 4 years</li>                
             </ul>
-            <a href="#order" class="button">¡Order Now!</a>
+            
         </div>
+        <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" class="button">¡Order Now!</a>
         
         <div class="montessori-life">
             <h1>Why Montessori Matters</h1>
@@ -539,15 +545,19 @@ window.addEventListener('resize', () => {
             <h1>About LUTTZ</h1>
                 <div class="heading-8">Welcome to LUTTZ, where passion meets purpose. Since 2020, we've embarked on a transformative journey to redefine Montessori education. </div>
                 <div class="heading-8">Driven by a deep-seated belief in the power of learning, we've crafted innovative designs that resonate with the hearts of parents and ignite the imaginations of children. Our mission is not just to provide education. </div>
-                <div class="heading-8">It's to inspire wonder, curiosity, and a lifelong love for learning. With LUTTZ, every child has the opportunity to embark on a journey of discovery, guided by the highest standards of quality and care. Join us in shaping a brighter future, one playful moment at a time.</div>
+                <div class="heading-8">It's to inspire wonder, curiosity, and a lifelong love for learning. With LUTTZ, every child has the opportunity to embark on a journey of discovery, guided by the highest standards of quality and care.</div>
+                <div class="heading-8">Join us in shaping a brighter future, one playful moment at a time.</div>
         </div>     
     </div>
     
            
 
     <section id="playground" class="playground">
-        <h2>Playground - ¡Explore The Product!</h2>
-        <iframe src="https://tu-sitio-web.com/3d-product-viewer" allowfullscreen></iframe>
+        <div class="heading-7">¡Explore The Product! - And Buy It Now In Etsy</div>        
+        <h1>¡Click Here!</h7>
+        <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" target="_blank">
+            <img src="etsy.png" alt="Montessori Object Permanence Box" class="responsive-image">
+        </a>
     </section>
 
     <footer>
