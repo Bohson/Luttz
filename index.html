@@ -55,7 +55,7 @@
             align-content: center;        
             text-align: center;            
             font-family: "Montserrat", sans-serif;
-            text-decoration: underline #E88F1A 4px;
+            
         }
         p {
             font-size: 16px;            
@@ -81,8 +81,7 @@
             font-size: 24px;
             margin-top: 40px;
             text-align: center;
-            font-family: "Montserrat", sans-serif;
-            text-decoration: underline #A7CB81 4px;
+            font-family: "Montserrat", sans-serif;            
             text-underline-offset: 10px;
         }
         h5 {
@@ -98,7 +97,7 @@
             padding-left: 0dvh;
             text-align: justify;                    
             font-family: "Montserrat", sans-serif;
-            font-weight: 500;
+            font-weight: 600;
         }        
         .heading-7 {
             font-size: 24px;
@@ -125,11 +124,12 @@
             padding-left: 2dvw;
         }
         .button {
-            display: inline-flex;            
+            display: flex;            
             padding: 2dvh 4dvw;
-            margin-left: 25dvw;
+            margin-left: 20dvw;
+            margin-right: 20dvw;
             background-color: #ff9900;
-            color: black;
+            color: white;
             text-decoration: none;
             border-radius: 15px;
             margin-top: 10px;            
@@ -167,7 +167,7 @@
         .characteristics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4dvw;
+            gap: 8dvw;
             margin-left: 0;
             padding-left: 0;
             object-position: center;
@@ -194,9 +194,15 @@
             font-size: 18;
         }
         .montessori-life {
-            border-top: 6px solid #A7CB81;
+            border-top: 6px solid #2c22bb;
             padding-top: 10px;
         }
+        .montessori-life1 {
+            border-top: 6px solid #ad2d9c;
+            padding-top: 10px;
+        }
+        
+        
         .about-luttz {
             border-top: 6px solid #F96060;
             padding-top: 10px;
@@ -339,7 +345,15 @@
             height: auto;
             display: block;
             max-width: 100%;
-}
+        }
+
+        .responsive-image-product {
+            width: 40dvh;
+            height: auto;
+            display: outside;
+            padding-left: 10dvw;
+            max-width: 40%;
+        }
     </style>
     <script>
         function startRect() {
@@ -363,6 +377,20 @@
         }
         function stopBall() {
             document.getElementById('gifBall').src = 'static-ball.gif';
+        }
+
+        function startCircle() {
+            document.getElementById('gifCircle').src = 'animated-circle.gif';
+        }
+        function stopCircle() {
+            document.getElementById('gifCircle').src = 'static-circle.png';
+        }
+
+        function startCil() {
+            document.getElementById('gifCil').src = 'animated-cil.gif';
+        }
+        function stopCil() {
+            document.getElementById('gifCil').src = 'static-cil.png';
         }
 
         
@@ -411,10 +439,9 @@
         <img src="luttzoriginal.png" alt="Logo de Luttz" class="logo">
         <div class="menu-toggle" hidden>Menu</div>
         <div class="nav-links">
-            <a href="#container" class="nav-link">About</a>
-            <a href="#productos" class="nav-link">Products</a>
+            <a href="#about-luttz" class="nav-link">About</a>            
             <a href="#Galery" class="nav-link">Gallery</a>
-            <a href="#contacto" class="nav-link">Contact</a>
+            <a href="https://www.etsy.com/es/shop/LUTTZshop" class="nav-link">Store</a>
         </div>
     </div>
     <script>
@@ -446,8 +473,9 @@ window.addEventListener('resize', () => {
         <iframe class="spline-viewer" src="https://my.spline.design/untitled-acd414cdbe3c4c4cc9958b3ef05bef99/" frameborder="0"></iframe>
     </div>
     <div class="container">
-        <h1>Object Permanence Box with Tray 6-in-1 <h1>
+        <h1>Object Permanence Box with Tray 6-in-1 <h1>        
         <h2>A Montessori material with six colorful geometric pieces and lids. Crafted from premium bass wood, it enhances motor skills, cognitive growth, and problem-solving. Perfect for at-home or on-the-go play, it’s the ultimate educational material for engaging, hands-on learning.</p>
+        <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" class="button">Order Now!</a>
     </div>            
     <div class="video-section">
         <video src="luttz-video-1.mp4" ></video>
@@ -491,7 +519,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Independence</h4>  
                             <div class="image-container">
-                                <img src="path_to_image4.jpg" alt="Color Identification">
+                                <img id="gifCircle" src="static-circle.png" alt="Geometric Shapes" onmouseover="startCircle()" onmouseout="stopCircle()">
                             </div>
                             <h6 class="description">Develops creativity, motor skills, problem-solving abilities, patience, and resilience.</h6>
                         </div>                    
@@ -501,7 +529,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Materials</h4> 
                             <div class="image-container">
-                                <img src="path_to_image5.jpg" alt="Creativity">
+                                <img id="gifCil" src="static-cil.png" alt="Geometric Shapes" onmouseover="startCil()" onmouseout="stopCil()">
                             </div> 
                             <h6 class="description">Made from premium basswood with non-toxic paint, ensuring durability and safety.</h6>
                         </div>                        
@@ -522,14 +550,14 @@ window.addEventListener('resize', () => {
         <h1>Product information</h1>
         <div class="product-info-container">
             <ul>
-                <li>Material: High Quality Premium Basswood</li>
-                <li>Dimensions: 11.61 x 5.7 x 4.52 inches</li>
-                <li>Item Weight: 2.05 pounds</li>
-                <li>Recommended Age: 12 months - 4 years</li>                
+                <h6>&#9679; Material: High Quality Premium Basswood</h6 >
+                <h6>&#9679; Dimensions: 11.61 x 5.7 x 4.52 inches</h6>
+                <h6>&#9679; Item Weight: 2.05 pounds</h6>
+                <h6>&#9679; Recommended Age: 12 months - 4 years</h6>                
             </ul>
-            
+            <img src="product-info.jpg" alt="Logo de Luttz" class="responsive-image-product" >
         </div>
-        <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" class="button">¡Order Now!</a>
+        <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" class="button">Order Now!</a>
         
         <div class="montessori-life">
             <h1>Why Montessori Matters</h1>
@@ -553,8 +581,8 @@ window.addEventListener('resize', () => {
            
 
     <section id="playground" class="playground">
-        <div class="heading-7">¡Explore The Product! - And Buy It Now In Etsy</div>        
-        <h1>¡Click Here!</h7>
+        <h1>Explore The Product! - And Buy It Now In Etsy</h1>        
+        <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" class="button">Order Now!</a>
         <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" target="_blank">
             <img src="etsy.png" alt="Montessori Object Permanence Box" class="responsive-image">
         </a>
