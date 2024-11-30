@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>LUTTZ</title>
     <style>        
+
         body {
             background-color: white ;
             color: black;
@@ -166,7 +167,7 @@
         .characteristics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 8dvw;
+            gap: 6dvw;
             margin-left: 0;
             padding-left: 0;
             object-position: center;
@@ -178,7 +179,7 @@
         .characteristics-grid ul {
             text-align: center;
             object-position: center;
-            margin-left: 0;
+            margin-right: 5dvh;
             padding-left: 0;
         }
         .characteristics-grid .image-container {
@@ -301,7 +302,8 @@
 
         @media (max-width: 1000px) {
             .video-section video {
-                height: 100%;
+                height: auto;
+                width: 100%;
                 object-fit: cover; /* u otro ajuste que prefieras para pantallas pequeñas */
             }   
             .video-section {     
@@ -327,13 +329,42 @@
         }        
 
         .product-info-container {
-            display: flex;            
-            align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px; /* Add space between items */
+        margin-top: 20px;
         }
 
-        .product-info-container ul {                    
-            object-fit: 100%;
-        }        
+        .product-info-container ul {
+            flex: 1; /* Text section takes up available space */
+            padding: 0 10px; /* Add padding for better spacing */
+        }
+
+        .product-info-container h6 {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 5px 0; /* Add spacing between lines */
+        }
+
+        .responsive-image-product {
+            flex: 0 0 300px; /* Image has a base width of 300px */
+            max-width: 40%; /* Prevent image from growing too large */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .product-info-container {
+                flex-direction: column; /* Stack text and image vertically */
+                text-align: center; /* Center content for better readability */
+            }
+
+            .responsive-image-product {
+                max-width: 90%; /* Scale image down for small screens */
+                margin: 10px 0; /* Add spacing around the image */
+            }
+        }    
 
         .hidden {
             display: none;
@@ -354,44 +385,7 @@
             max-width: 40%;
         }
     </style>
-    <script>
-        function startRect() {
-            document.getElementById('gifRect').src = 'animated-rect.gif';
-        }
-
-        function stopRect() {
-            document.getElementById('gifRect').src = 'static-rect.gif';
-        }
-
-        function startCube() {
-            document.getElementById('gifCube').src = 'animated-cube.gif';
-        }
-
-        function stopCube() {
-            document.getElementById('gifCube').src = 'static-cube.gif';
-        }
-
-        function startBall() {
-            document.getElementById('gifBall').src = 'animated-ball.gif';
-        }
-        function stopBall() {
-            document.getElementById('gifBall').src = 'static-ball.gif';
-        }
-
-        function startCircle() {
-            document.getElementById('gifCircle').src = 'animated-circle.gif';
-        }
-        function stopCircle() {
-            document.getElementById('gifCircle').src = 'static-circle.png';
-        }
-
-        function startCil() {
-            document.getElementById('gifCil').src = 'animated-cil.gif';
-        }
-        function stopCil() {
-            document.getElementById('gifCil').src = 'static-cil.png';
-        }
-
+    <script>     
         
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -488,7 +482,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Sense of Achievement</h4>
                             <div class="image-container">
-                                <img id="gifCube" src="static-cube.gif" alt="Geometric Shapes" onmouseover="startCube()" onmouseout="stopCube()">
+                                <img id="gifCube" src="animated-cube.gif" alt="Geometric Shapes" loading="lazy"  >
                             </div>
                             <h6 class="description">Encourages babies to develop a sense of accomplishment through repetitive play with six geometric figures.</h6> 
                         </div>                                                
@@ -498,7 +492,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Cause and Effect</h4>
                             <div class="image-container">
-                                <img id="gifRect" src="static-rect.gif" alt="Geometric Shapes" onmouseover="startRect()" onmouseout="stopRect()">
+                                <img id="gifRect" src="animated-rect.gif" alt="Geometric Shapes" loading="lazy">
                             </div>
                             <h6 class="description">Teaches children that their actions lead to outcomes, fostering an understanding of cause and effect.</h6>
                         </div>                        
@@ -508,7 +502,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Color Engagement</h4> 
                             <div class="image-container">
-                                <img id="gifBall" src="static-ball.gif" alt="Geometric Shapes" onmouseover="startBall()" onmouseout="stopBall()">
+                                <img id="gifBall" src="animated-ball.gif" alt="Geometric Shapes" loading="lazy">
                             </div>
                             <h6 class="description">Uses vibrant colors to enhance engagement and support learning, following Montessori principles.</h6>
                         </div>                         
@@ -518,7 +512,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Independence</h4>  
                             <div class="image-container">
-                                <img id="gifCircle" src="static-circle.png" alt="Geometric Shapes" onmouseover="startCircle()" onmouseout="stopCircle()">
+                                <img id="gifCircle" src="animated-circle.gif" alt="Geometric Shapes" loading="lazy">
                             </div>
                             <h6 class="description">Develops creativity, motor skills, problem-solving abilities, patience, and resilience.</h6>
                         </div>                    
@@ -528,7 +522,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Materials</h4> 
                             <div class="image-container">
-                                <img id="gifCil" src="static-cil.png" alt="Geometric Shapes" onmouseover="startCil()" onmouseout="stopCil()">
+                                <img id="gifCil" src="animated-cil.gif" alt="Geometric Shapes" loading="lazy">
                             </div> 
                             <h6 class="description">Made from premium basswood with non-toxic paint, ensuring durability and safety.</h6>
                         </div>                        
@@ -538,7 +532,7 @@ window.addEventListener('resize', () => {
                         <div class="content-container">
                             <h4>Safe for All Ages</h4>
                             <div class="image-container">
-                                <img src="path_to_image5.jpg" alt="Creativity">
+                                <img id="gifTriangle" src="animated-triangle.gif" alt="Geometric Shapes" loading="lazy">
                             </div>
                             <h6 class="description">Designed with rigorous safety standards, suitable for newborns, and highly beneficial for kids aged 1-3 years.</h6>    
                         </div>                        
