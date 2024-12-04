@@ -21,18 +21,26 @@
             justify-content: space-between;
             align-items: center;
             background-color: white;
-            padding: 10px 20px;
+            padding: 10px 20%;
             padding-left: 10dvw;
-            padding-right: 10dvw;
+            padding-right: 10dvw; 
             border-bottom: 6px solid #ff9900;            
+            position: fixed; /* Keeps the navbar fixed at the top of the page */
+            top: 0; /* Aligns the navbar to the top edge */
+            width: 100%; /* Ensures the navbar spans the full width */
+            z-index: 1000; /* Ensures the navbar stays above other elements */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .logo {
             width: 120px;
             color: white;
+            margin-right: 10dvw;
         }
         .nav-links {
             display: flex;
             gap: 30px;
+            margin-right: auto;
+            margin-left: auto;
             
         }
         .nav-link {
@@ -223,11 +231,12 @@
         @media (max-width: 768px) {
             .navbar {
                 display: flex;                
-                align-items: flex;           
+                align-items: center;           
+                padding: 10px;                
                 
             }
             .nav-links {
-                flex-direction: column;
+                flex-direction: column;                
                 gap: 10px;
                 width: 30%;                
                 align-items: center;
@@ -246,14 +255,16 @@
                 text-decoration: underline;                
                 text-decoration-color: #ff9900;
                 gap: 10px;
+                margin-right: auto;
 
             }
             .menu-toggle {
                 flex-direction: column;
+                margin-right: auto;
                 display: flex;                
                 cursor: pointer;                                               
                 background-color: #ff9900;
-                color: black;
+                color: black;                
                 padding: 10px 20px;
                 border-radius: 15px;                
                 
@@ -471,7 +482,7 @@ window.addEventListener('resize', () => {
         <a href="https://www.etsy.com/listing/1623747175/montessori-object-permanence-box-6-in-1" class="button">Order Now!</a>
     </div>            
     <div class="video-section">
-        <video src="luttz-video-1.mp4" autoplay loop muted playsinline ></video>
+        <video src="luttz-video-1.mp4" autoplay loop muted playsinline></video>
     </div>
     <div class="container">
         <div class="benefits">
